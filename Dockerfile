@@ -36,6 +36,6 @@ RUN apt-get update && apt-get install -y \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb\
     && cd ~ \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
     && apt-get install nodejs
