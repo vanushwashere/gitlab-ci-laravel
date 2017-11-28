@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 	    zip unzip\
 	    ntfs-3g\
 	    cifs-utils\
-    && docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
+    && docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy mailparse \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && pecl install redis \
