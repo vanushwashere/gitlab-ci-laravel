@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y \
 	    libsnmp-dev \
 	    libpcre3-dev \
 	    libtidy-dev \
-	    python-software-properties \
+	    software-properties-common \
 	    zip unzip\
 	    ntfs-3g\
 	    cifs-utils \
