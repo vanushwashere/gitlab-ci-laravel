@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y \
 	    cifs-utils \
 	    mysql-client \
 	    gnupg \
+	    iputils-ping \
     && docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
