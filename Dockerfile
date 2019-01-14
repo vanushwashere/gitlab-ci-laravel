@@ -40,6 +40,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable mongodb\
     && pecl install mailparse \
     && docker-php-ext-enable mailparse\
+    && docker-php-ext-install exif \
+    && docker-php-ext-enable exif \
     && cd ~ \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
