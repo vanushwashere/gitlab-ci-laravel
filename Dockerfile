@@ -1,6 +1,6 @@
 FROM php:7.1
 MAINTAINER Vanush Ghamaryan <vanush.kamaryan@gmail.com>
-
+RUN rm /etc/apt/preferences.d/no-debian-php
 RUN apt-get update && apt-get install -y \
 	    git \
 	    libcurl4-gnutls-dev \
