@@ -1,4 +1,4 @@
-FROM php:7.1
+FROM php:7.1-stretch
 MAINTAINER Vanush Ghamaryan <vanush.kamaryan@gmail.com>
 RUN rm /etc/apt/preferences.d/no-debian-php
 RUN apt-get update && apt-get install -y \
@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 	    zip unzip\
 	    ntfs-3g\
 	    cifs-utils \
-	    mysql-client-5.7 \
+	    mysql-client \
 	    gnupg \
 	    iputils-ping \
 	    libmagickwand-dev \
