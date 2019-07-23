@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 	    zip unzip\
 	    ntfs-3g\
 	    cifs-utils \
-	    mysql-client \
+	    mysql-client-5.7 \
 	    gnupg \
 	    iputils-ping \
 	    libmagickwand-dev \
