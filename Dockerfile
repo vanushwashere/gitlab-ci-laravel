@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y \
 	    mysql-client \
 	    gnupg \
 	    iputils-ping \
+	    libmagickwand-dev \
     && docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
@@ -40,6 +41,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable mongodb\
     && pecl install mailparse \
     && docker-php-ext-enable mailparse\
+    && pecl install imagick \
+    && docker-php-ext-enable imagick \
     && docker-php-ext-install exif \
     && docker-php-ext-enable exif \
     && cd ~ \
