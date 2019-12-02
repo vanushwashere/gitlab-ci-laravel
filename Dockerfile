@@ -25,14 +25,14 @@ RUN apt-get update && apt-get install -y \
 	    libpcre3-dev \
 	    libtidy-dev \
 	    software-properties-common \
-	    zip unzip libzip-dev \
+	    zip unzip libzip-dev\
 	    ntfs-3g\
 	    cifs-utils \
 	    mysql-client \
 	    gnupg \
 	    iputils-ping \
-	    libmagickwand-dev \
-    && docker-php-ext-install mbstring pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
+	    libmagickwand-dev
+RUN docker-php-ext-install mbstring pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && pecl install redis \
