@@ -1,4 +1,4 @@
-FROM php:7.1-stretch
+FROM php:7.3-stretch
 MAINTAINER Vanush Ghamaryan <vanush.kamaryan@gmail.com>
 RUN rm /etc/apt/preferences.d/no-debian-php
 RUN apt-get update && apt-get install -y \
