@@ -25,14 +25,14 @@ RUN apt-get update && apt-get install -y \
 	    libpcre3-dev \
 	    libtidy-dev \
 	    software-properties-common \
-	    zip unzip\
+	    zip unzip libzip-dev \
 	    ntfs-3g\
 	    cifs-utils \
 	    mysql-client \
 	    gnupg \
 	    iputils-ping \
-	    libmagickwand-dev \
-    && docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
+	    libmagickwand-dev
+RUN docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && pecl install redis \
@@ -44,8 +44,8 @@ RUN apt-get update && apt-get install -y \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
     && docker-php-ext-install exif \
-    && docker-php-ext-enable exif \
-    && cd ~ \
+    && docker-php-ext-enable exif 
+RUN cd ~ \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
-    && apt-get install -y nodejs
+    && curl -sL https://deb.nodesource.com/setup_7.x | bash - 
+RUN apt-get install -y nodejs
