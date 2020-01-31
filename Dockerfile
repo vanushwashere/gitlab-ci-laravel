@@ -37,7 +37,7 @@ RUN docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip b
     && docker-php-ext-enable xdebug \
     && pecl install redis \
     && docker-php-ext-enable redis \
-    && pecl install mongodb \
+    && pecl install mongodb-1.6.1 \
     && docker-php-ext-enable mongodb\
     && pecl install mailparse \
     && docker-php-ext-enable mailparse\
