@@ -33,8 +33,6 @@ RUN apt-get update && apt-get install -y \
 	    iputils-ping \
 	    libmagickwand-dev
 RUN docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && pecl install mongodb \
