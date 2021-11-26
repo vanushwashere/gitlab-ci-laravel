@@ -33,7 +33,8 @@ RUN apt-get update && apt-get install -y \
 	    iputils-ping \
 	    libmagickwand-dev \
 	    g++ \
-	    zlib1g-dev
+	    zlib1g-dev \
+RUN pecl channel-update pecl.php.net
 RUN docker-php-ext-install mbstring pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy\
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
