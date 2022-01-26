@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 	    libmagickwand-dev \
 	    g++ \
 	    zlib1g-dev
-RUN docker-php-ext-install mbstring pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy\
+RUN docker-php-ext-install pcntl mbstring pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy\
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && pecl install redis \
@@ -48,7 +48,8 @@ RUN docker-php-ext-install mbstring pdo_mysql curl json intl gd xml zip bz2 opca
     && pecl install grpc \
     && docker-php-ext-enable grpc \
     && docker-php-ext-install exif \
-    && docker-php-ext-enable exif
+    && docker-php-ext-enable exif \
+    && docker-php-ext-configure pcntl --enable-pcntl
 RUN cd ~ \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && curl -sL https://deb.nodesource.com/setup_7.x | bash -
