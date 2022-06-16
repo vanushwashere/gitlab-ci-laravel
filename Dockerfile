@@ -1,4 +1,4 @@
-FROM php:7.3-stretch
+FROM php:7.4-buster
 MAINTAINER Vanush Ghamaryan <vanush.kamaryan@gmail.com>
 RUN rm /etc/apt/preferences.d/no-debian-php
 RUN apt-get update && apt-get install -y \
@@ -28,12 +28,13 @@ RUN apt-get update && apt-get install -y \
 	    zip unzip libzip-dev\
 	    ntfs-3g\
 	    cifs-utils \
-	    mysql-client \
+	    default-mysql-client \
 	    gnupg \
 	    iputils-ping \
 	    libmagickwand-dev \
 	    g++ \
-	    zlib1g-dev
+	    zlib1g-dev \
+        libonig-dev
 RUN docker-php-ext-install pcntl mbstring pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy\
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
