@@ -1,4 +1,4 @@
-FROM php:7.4-buster
+FROM php:8.1-buster
 MAINTAINER Vanush Ghamaryan <vanush.kamaryan@gmail.com>
 RUN rm /etc/apt/preferences.d/no-debian-php
 RUN apt-get update && apt-get install -y \
@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y \
 	    g++ \
 	    zlib1g-dev \
         libonig-dev
-RUN docker-php-ext-install pcntl mbstring pdo_mysql curl json intl gd xml zip bz2 opcache soap tidy\
+RUN docker-php-ext-install pcntl mbstring pdo_mysql curl intl gd xml zip bz2 opcache soap tidy\
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && pecl install redis \
