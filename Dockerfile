@@ -38,6 +38,8 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pcntl mbstring pdo_mysql curl intl gd xml zip bz2 opcache soap tidy\
     && pecl install mongodb \
     && docker-php-ext-enable mongodb\
+    && pecl install redis \
+    && docker-php-ext-enable redis\
     && pecl install mailparse \
     && docker-php-ext-enable mailparse\
     && pecl install imagick \
